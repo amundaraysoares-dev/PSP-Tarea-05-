@@ -2,36 +2,27 @@ import java.util.Scanner;
 
 public class Interfaz {
 
-public void solicitud(){
-  Scanner detectar = new Scanner(System.in);
+    public static void solicitud() {
+        int resultado = 0;
+        Scanner detectar = new Scanner(System.in);
+        int numero;
 
+        while (true) {
+            System.out.print("Introduce un número (o 'salir' para terminar): ");
+            String respuesta = detectar.nextLine();
 
-    while (true){
-        System.out.println("Introduce un número (o 'salir' para terminar):");
-        String salida = detectar.nextLine();
+            if (respuesta.equalsIgnoreCase("salir")) {
+                System.out.println("Saliendo del programa");
+                break;
+            }
 
-
-        int num = detectar.nextInt();
-        if (salida.equals("salir")){
-            System.out.println("Saliendo del programa");
-            break;
-        } else{
-            System.out.println("Solo se admite el mensaje Salir");
-
+            try {
+                numero = Integer.parseInt(respuesta);
+                resultado = numero;
+                System.out.println("esto esta bien. Número guardado: " + resultado);
+            } catch (NumberFormatException exception) {
+                System.out.println("eso no se puede poner");
+            }
         }
-
-
-
-
     }
-
-};
-
-
-
-
-
-
-
-
 }
