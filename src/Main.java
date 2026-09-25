@@ -1,8 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        Interfaz.solicitud();
-
+        Lanzador.N1("50");
 
     }
 
